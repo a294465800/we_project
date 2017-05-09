@@ -1,0 +1,29 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "color": "#fff",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "豆瓣",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "color": "#888",
+    "selectedColor": "#09bb07",
+    "backgroundColor": "#000",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "观看电影",
+      "iconPath": "icon/1.png",
+      "selectedIconPath": "icon/1.png"
+    },{
+      "pagePath": "pages/index/index",
+      "text": "当前热映",
+      "iconPath": "icon/2.png",
+      "selectedIconPath": "icon/2.png"
+    }]
+  }
+}
