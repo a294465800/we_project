@@ -20,3 +20,11 @@
 > 获取数据用微信的request方法，只需要提供豆瓣api的url链接，就能够get到数据
 3. 用setData()方法来将数据存进对应的page里面，在视图层(html)用`wx:for`来进行列表渲染
 4. 在渲染过程中加一个加载提示框(微信的showToast，API)，等到数据请求并渲染完成后，结束提示框
+
+### 3.二维码生成
+文件目录[we_project/qrcode](https://github.com/a294465800/we_project/tree/master/qrcode)
+
+**程序思路**
+1. 二维码用画布(canvas),调用封装好的qrcode.js里面的方法生成；提供一个input框来获取用户输入的数据作为生成二维码方法的url参数
+2. 引入qra.js(利用微信自带的`var QR = require('../../utils/qra.js');`)；在onLoad函数调用生成二维码的方法，需要获得生成的二维码的url、canvas-ID和宽高
+3. 绑定事件来执行函数(本次把函数绑定在表单form里面)。
