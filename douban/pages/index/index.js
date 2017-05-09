@@ -5,7 +5,7 @@ Page({
   data: {
     imgUrls: [],
     indicatorDots: false,
-    autoplay: false,
+    autoplay: true,
     interval: 5000,
     duration: 1000,
     movie: null

@@ -29,6 +29,7 @@ Page({
     }
     this.setData({ imageUserScr: this.data.srcs[e.currentTarget.id] });
     clearInterval(timer);
+    console.log(e);
 
     let user = this.data.imageUserScr;
     let ai = this.data.imageAiScr;
