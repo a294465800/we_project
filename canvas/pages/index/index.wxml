@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="canvas_area">
+    <canvas canvas-id="myCanvas" class="myCanvas" disable-scroll="false" bindtouchstart="touchStart" bindtouchmove="touchMove" />
+  </view>
+  <view class="canvas_tools">
+    <view class="box box1" bindtap="penSelect" data-param="5">5宽度</view>
+    <view class="box box2" bindtap="penSelect" data-param="15">15宽度</view>
+    <view class="box box3" bindtap="colorSelect" data-param="#cc0033">红色</view>
+    <view class="box box4" bindtap="colorSelect" data-param="#ff9900">橙色</view>
+    <view class="box box5" bindtap="colorSelect" data-param="#f8f8f8">橡皮擦</view>
+  </view>
+</view>
