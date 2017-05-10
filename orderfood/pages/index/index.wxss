@@ -1,0 +1,131 @@
+/**index.wxss**/
+
+.container swiper-item image {
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1rpx solid #999;
+}
+
+.menu .menu-select {
+  font-weight: bold;
+}
+
+/*菜单布局*/
+
+.foodList .food-item {
+  display: flex;
+  flex-direction: row;
+  margin: 15rpx 0;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.foodList .food-item-1 {
+  flex: 1 1 auto;
+  width: 40%;
+  margin: 10rpx 20rpx;
+  max-width: 197px;
+  max-height: 197px;
+}
+.food-item image {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+.food-item_img {
+  position: relative;
+  width: 100%;
+  height: 28vh;
+  background-color: #fff;
+  margin-bottom: 5rpx;
+}
+.food-item_name {
+  font-size: 1rem;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 10rpx;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.order,
+.orderNum,
+.cancel,
+.food-item_price {
+  font-size: 1.2rem;
+  display: inline-block;
+  color: #f60;
+  width: 1.2rem;
+  line-height: 1.2rem;
+  border: 2px solid #f60;
+  border-radius: 100%;
+  text-align: center;
+}
+.orderNum {
+  border: none;
+  font-weight: bold;
+  width: 60rpx;
+  text-align: center
+}
+.food-item_price {
+  border: none;
+  float: right;
+  width: 150rpx;
+  text-align: right;
+}
+
+/*提交*/
+.order-view {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  line-height: 100rpx;
+}
+.order-view image {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  overflow: inherit;
+  position: relative;
+  left: 30rpx;
+}
+.order-number,
+.order-bt {
+  display: inline-block;
+  width: 50%;
+}
+.order-num-txt {
+  position: absolute;
+  background-color: red;
+  border-radius: 100%;
+  width: 30rpx;
+  height: 30rpx;
+  font-size: 14px;
+  top: -13rpx;
+  right: -15rpx;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  line-height: 30rpx;
+}
+.order-totalCost {
+  float: right;
+  width: 300rpx;
+  text-align: center;
+  font: normal 24px/100rpx "微软雅黑";
+  color: brown;
+}
+.order-bt {
+  width: 50%;
+  background-color: green;
+  color: #fff;
+  text-align: center;
+}

@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<view class="container">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!--下拉选单-->
+  <view class="menu">
+    <picker bindchange="foodTypeChange" value="{{0}}" range="{{foodTypes}}">
+      <view class="menu-select">
+        当前选择：{{foodTypes[foodTypesIndex]}}
+      </view>
+    </picker>
+    <picker bindchange="rankTypeChange" value="0" range="{{rankTypes}}">
+      <view class="menu-select">
+        排序：{{rankTypes[rankTypesIndex]}}
+      </view>
+    </picker>
+  </view>
+
+  <!--列表展示-->
+  <scroll-view scroll-y class="foodList">
+    <view class="food-item">
+      <block wx:for="{{foodList}}">
+        <view class="food-item-1">
+          <view class="food-item_img">
+            <image src="/pages/images/1.jpg" mode="aspectFill"></image>
+            <view class="food-item_name">{{item.title}}</view>
+          </view>
+          <view class="food-item_handle">
+            <view class="order" data-index="{{index}}" bindtap="addToCart">+</view>
+            <view class="orderNum">{{item.num?item.num:0}}</view>
+            <view class="cancel" data-index="{{index}}" bindtap="reduceFromCart">-</view>
+            <view class="food-item_price">￥{{item.cost}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <!--提交订单-->
+  <view class="order-view">
+    <view class="order-number">
+      <image src="/pages/images/2.jpg" mode="scaleToFill">
+            <text class="order-num-txt">{{orderNum}}</text>
+      </image>
+      <text class="order-totalCost">￥{{orderCost}}</text>
+    </view>
+    <view class="order-bt" bindtap="sublimitClick">提交订单</view>
+  </view>
+</view>
