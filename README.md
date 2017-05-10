@@ -28,3 +28,61 @@
 1. 二维码用画布(canvas),调用封装好的qrcode.js里面的方法生成；提供一个input框来获取用户输入的数据作为生成二维码方法的url参数
 2. 引入qra.js(利用微信自带的`var QR = require('../../utils/qra.js');`)；在onLoad函数调用生成二维码的方法，需要获得生成的二维码的url、canvas-ID和宽高
 3. 绑定事件来执行函数(本次把函数绑定在表单form里面)。
+
+### 4.简单画布画图
+文件目录[we_project/canvas](https://github.com/a294465800/we_project/tree/master/canvas)
+
+**程序思路**
+1. 页面布局是屏幕的80%左右作为画布，可描绘的部分；下方有笔头宽度选择和笔色选择，里面绑定了data数据供js操作。
+2. 绘画功能实现过程：
+```javascript
+let ctx;
+Page({
+  data: {
+    //全局参数，用来控制宽度和颜色
+    pen: {
+      lineWidth: 5,
+      color: '#cc0033'
+    }
+  },
+  onLoad: function () {
+    //调用微信的画布api
+    ctx = wx.createCanvasContext('myCanvas')
+    
+    //一下均为画布api的方法，可到官方开发手册查询
+    ctx.setStrokeStyle(this.data.pen.color)
+    ctx.setLineWidth(this.data.pen.lineWidth)
+    ctx.setLineCap('round')
+    ctx.setLineJoin('round')
+  },
+  touchStart(e){
+    //为触摸的开始，绑定一个函数，确定画布粗细、颜色，同时找到点位置
+    ctx.setStrokeStyle(this.data.pen.color)
+    ctx.setLineWidth(this.data.pen.lineWidth)
+    ctx.moveTo(e.touches[0].x, e.touches[0].y)
+  },
+  touchMove(e){
+    //在按住不放的过程中，画出线条
+    let x = e.touches[0].x
+    let y = e.touches[0].y
+    //找到线条位置
+    ctx.lineTo(x, y)
+    
+    //上色
+    ctx.stroke()
+    
+    //调用draw方法
+    ctx.draw(true)
+    
+    //每次画一个点后，终点要移到下一个点，否则只能画出一个点
+    ctx.moveTo(x, y)
+  },
+  //控制画笔属性的函数
+  penSelect(e){
+    this.setData({'pen.lineWidth': e.target.dataset.param})
+  },
+  colorSelect(e){
+    this.setData({'pen.color': e.target.dataset.param})
+  }
+})
+```
