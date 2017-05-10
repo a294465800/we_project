@@ -23,7 +23,7 @@
   </view>
 
   <!--列表展示-->
-  <scroll-view scroll-y class="foodList">
+  <scroll-view scroll-y="true" class="foodList">
     <view class="food-item">
       <block wx:for="{{foodList}}">
         <view class="food-item-1">

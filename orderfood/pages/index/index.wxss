@@ -15,7 +15,9 @@
 }
 
 /*菜单布局*/
-
+.foodList {
+  height: 750rpx;
+}
 .foodList .food-item {
   display: flex;
   flex-direction: row;
