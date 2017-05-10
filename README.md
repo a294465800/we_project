@@ -86,3 +86,5 @@ Page({
   }
 })
 ```
+### 5.点餐效果展示
+文件目录[we_project/orderfood](https://github.com/a294465800/we_project/tree/master/orderfood)
